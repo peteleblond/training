@@ -33,7 +33,7 @@ variable "aws_region" {
 
 variable "instancecount" {
   type    = "string"
-  default = "2"
+  default = "3"
 }
 
 variable "dnsimple_token" {
