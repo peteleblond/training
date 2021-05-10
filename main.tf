@@ -36,20 +36,20 @@ variable "instancecount" {
   default = "3"
 }
 
-variable "dnsimple_token" {
-  type = "string"
-  default = "default-token"
-}
+#variable "dnsimple_token" {
+#  type = "string"
+#  default = "default-token"
+#}
 
-variable "dnsimple_account" {
-  type = "string"
-  default = "default-account"
-}
+#variable "dnsimple_account" {
+#  type = "string"
+#  default = "default-account"
+#}
 
-variable "dnsimple_domain" {
-  type = "string"
-  default = "default-domain"
-}
+#variable "dnsimple_domain" {
+#  type = "string"
+#  default = "default-domain"
+#}
 
 
 # Terraform Enterprise
@@ -67,10 +67,10 @@ provider "aws" {
   region     = "${var.aws_region}"
 }
 
-provider "dnsimple" {
-  token = "${var.dnsimple_token}"
-  account = "${var.dnsimple_account}"
-}
+#provider "dnsimple" {
+#  token = "${var.dnsimple_token}"
+#  account = "${var.dnsimple_account}"
+#}
 
 
 resource "aws_instance" "web" {
@@ -90,13 +90,13 @@ resource "aws_instance" "web" {
 }
 
 
-resource "dnsimple_record" "Web-1" {
-  domain = "${var.dnsimple_domain}"
-  name   = "web-1"
-  value  = "${aws_instance.web.0.public_ip}"
-  type   = "A"
-  ttl    = 3600
-}
+#resource "dnsimple_record" "Web-1" {
+#  domain = "${var.dnsimple_domain}"
+#  name   = "web-1"
+#  value  = "${aws_instance.web.0.public_ip}"
+#  type   = "A"
+#  ttl    = 3600
+#}
 
 
 output "public_ip" {
